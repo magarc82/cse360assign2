@@ -39,10 +39,19 @@ public class SimpleList {
 	 * @param num is the integer to be added to the array 
 	 */
 	public void add(int num) {
+		
+		if(count + 1 == (list.length)) {
+			int[] list2 = new int[list.length+list.length/2];
+			
+			for(int i = 0; i < count; i++) {
+				list2[i]=list[i];
+			}
+			list=list2;
+		}
 
 		for (int index = count; 0 < index; index--) {
 
-			if (index != 10) {
+			if (index != list.length) {
 
 				list[index] = list[index - 1];
 
@@ -51,11 +60,8 @@ public class SimpleList {
 		}
 		list[0] = num;
 
-		if (count < 10) {
 
 			count++;
-
-		}
 
 	}
 	
@@ -75,6 +81,15 @@ public class SimpleList {
 				index++;
 			}
 			count--;
+		}
+		
+		if(count <= (list.length)*(3/4)) {
+			int[] list2 = new int[list.length-1];
+			
+			for(int i = 0; i < count; i++) {
+				list2[i]=list[i];
+			}
+			list=list2;
 		}
 
 	}
