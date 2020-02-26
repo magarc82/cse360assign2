@@ -83,7 +83,7 @@ public class SimpleList {
 			count--;
 		}
 		
-		if(count <= (list.length)*(3/4)) {
+		if((count <= (list.length)*(3/4)) && list.length > 1) {
 			int[] list2 = new int[list.length-1];
 			
 			for(int i = 0; i < count; i++) {
