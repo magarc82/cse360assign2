@@ -72,24 +72,27 @@ public class SimpleList {
 	 * @param num the number to be removed
 	 */
 	public void remove(int num) {
-
-		int index = search(num);
-
-		if (index != -1) {
-			while(index < count-1) {
-				list[index] = list[index +1];
-				index++;
-			}
-			count--;
-		}
-		
-		if((count <= (list.length)*(3/4)) && list.length > 1) {
-			int[] list2 = new int[list.length-1];
+		if(count != 0) {
 			
-			for(int i = 0; i < count; i++) {
-				list2[i]=list[i];
+		int index = search(num);
+			if (index != -1) {
+				
+				while(index < count-1) {
+					list[index] = list[index +1];
+					index++;
+				}
+				
+				count--;
 			}
-			list=list2;
+			
+			if((count <= (list.length)*(3/4)) && list.length > 1) {
+				int[] list2 = new int[list.length-1];
+				
+				for(int i = 0; i < count; i++) {
+					list2[i]=list[i];
+				}
+				list=list2;
+			}
 		}
 
 	}
