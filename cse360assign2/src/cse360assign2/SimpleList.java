@@ -40,7 +40,7 @@ public class SimpleList {
 	 */
 	public void add(int num) {
 		
-		if(count + 1 == (list.length)) {
+		if(count + 1 >= (list.length)) {
 			int[] list2 = new int[list.length+list.length/2];
 			
 			for(int i = 0; i < count; i++) {
@@ -143,5 +143,39 @@ public class SimpleList {
 		}
 
 		return index;
+	}
+	/**
+	 * this method adds an integer at the end of the list and expands 
+	 * it if there is not enough room
+	 * @param num is the integer appended
+	 */
+	public void append(int num) {
+		
+		if(count + 1 >= (list.length)) {
+			int[] list2 = new int[list.length+list.length/2];
+			
+			for(int i = 0; i < count; i++) {
+				list2[i]=list[i];
+			}
+			list=list2;
+		}
+
+		
+		list[count+1]=num;
+		count++;
+	}
+	/**
+	 * returns first integer in array
+	 * @return
+	 */
+	public int first() {
+		return list[0];
+	}
+	/**
+	 * returns last integer in array
+	 * @return
+	 */
+	public int last() {
+		return list[count-1];
 	}
 }
