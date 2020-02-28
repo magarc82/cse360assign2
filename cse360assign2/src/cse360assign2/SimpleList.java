@@ -74,22 +74,21 @@ public class SimpleList {
 	public void remove(int num) {
 		if(count != 0) {
 			
-		int index = search(num);
+			int index = search(num);
+
 			if (index != -1) {
-				
 				while(index < count-1) {
 					list[index] = list[index +1];
 					index++;
 				}
-				
 				count--;
 			}
 			
-			if((count <= (list.length)*(3/4)) && list.length > 1) {
+			if(count <= (list.length*3)/4 && list.length >= 1) {
 				int[] list2 = new int[list.length-1];
 				
-				for(int i = 0; i < count; i++) {
-					list2[i]=list[i];
+				for(int counter = 0; counter < count; counter++) {
+					list2[counter]=list[counter];
 				}
 				list=list2;
 			}
