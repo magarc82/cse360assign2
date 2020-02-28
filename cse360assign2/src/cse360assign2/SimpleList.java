@@ -172,13 +172,22 @@ public class SimpleList {
 	 * @return
 	 */
 	public int first() {
-		return list[0];
+		if(count != 0) {
+			return list[0];
+		}
+		return -1;
 	}
 	/**
 	 * returns last integer in array
 	 * @return
 	 */
 	public int last() {
-		return list[count-1];
+		if(count != 0) {
+			return list[count-1];
+		}
+		else {
+			return -1;
+		}
+		
 	}
 }
