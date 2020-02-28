@@ -88,7 +88,7 @@ public class SimpleList {
 			}
 			
 			if(count <= (list.length*3)/4 && list.length >= 1) {
-				int[] list2 = new int[list.length-1];
+				int[] list2 = new int[(list.length*3)/4];
 				
 				for(int counter = 0; counter < count; counter++) {
 					list2[counter]=list[counter];
