@@ -30,6 +30,9 @@ public class SimpleList {
 		count = 0;
 
 	}
+	public int size() {
+		return list.length;
+	}
 	
 	/**
 	 * This method adds an array to the index 0 and shift all other element right. If the
